@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thuynguy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 17:20:05 by thuynguy          #+#    #+#             */
-/*   Updated: 2022/10/25 17:23:50 by thuynguy         ###   ########.fr       */
+/*   Created: 2022/10/29 13:15:16 by thuynguy          #+#    #+#             */
+/*   Updated: 2022/10/29 13:22:25 by thuynguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	char		*d;
-	const char	*s;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
+	p1 = (unsigned char *) s1;
+	p2 = (unsigned char *) s2;
 	i = 0;
-	d = dst;
-	s = src;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst > src && dst < (src + len))
+	while (i < n)
 	{
-		while (len-- > 0)
-		{
-			d[len] = s[len];
-		}
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
 	}
-	else
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (0);
 }

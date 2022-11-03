@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    /*char str1[] = "memmove can be very useful......";
+    char str1[] = "memmove can be very useful......";
     char str2[] = "memmove can be very useful......";
     char str3[] = "memmove can be very useful......";
 
@@ -17,7 +17,7 @@ int main(void)
     printf( "memmove result:\n" );
     printf("    %s \n", str2);
     printf( "ft_memmove result:\n" );
-    printf("    %s \n", str3);*/
+    printf("    %s \n", str3);
 
     /*char *dst = (void *)0;
     char *src = (void *)0;
@@ -30,7 +30,7 @@ int main(void)
     ft_memmove(ft_dst, ft_src, n);
     printf("ft_memmove result:    %s \n", ft_dst);*/
 
-    int size = 128 * 1024 * 1024;
+    /*int size = 128 * 1024 * 1024;
 	char *dst = (char *)malloc(sizeof(char) * size);
 	char *data = (char *)malloc(sizeof(char) * size);
     char *ft_dst = (char *)malloc(sizeof(char) * size);
@@ -40,7 +40,7 @@ int main(void)
 	if (!dst)
 		return (0);
     memmove(dst, data, size);
-    //ft_memmove(ft_dst, ft_data, size);
+    ft_memmove(ft_dst, ft_data, size);
     printf("memmove result:    %s \n", dst);
 
 	ft_memmove(ft_dst, ft_data, size);
@@ -49,6 +49,6 @@ int main(void)
     free(dst);
     free(data);
     free(ft_dst);
-    free(ft_data);
+    free(ft_data);*/
 	return (0);
 }
