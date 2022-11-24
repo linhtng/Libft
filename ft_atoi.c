@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/29 15:50:27 by thuynguy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	overflow(long result, int sign)
+static int	overflow(long result, int sign)
 {
 	int	overflow_res;
 
@@ -21,7 +21,7 @@ int	overflow(long result, int sign)
 	return (overflow_res);
 }
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == '\t' || c == '\v'
 		|| c == '\f' || c == '\r' || c == '\n' || c == ' ');

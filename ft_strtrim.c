@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ltrim_nr(char const *s1, char const *set)
+static int	ltrim_nr(char const *s1, char const *set)
 {
 	char const	*newleft;
 	int			ltrim_nr;
@@ -26,7 +26,7 @@ int	ltrim_nr(char const *s1, char const *set)
 	return (ltrim_nr);
 }
 
-int	rtrim_nr(char const *s1, char const *set)
+static int	rtrim_nr(char const *s1, char const *set)
 {
 	char const	*newright;
 	int			rtrim_nr;
@@ -47,11 +47,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		r;
 	int		lenres;
 	char	*res;
+	int		i;
 
+	i = 0;
 	if (!s1)
 		return (NULL);
 	if (!set)
 		return ((char *)s1);
+	while (ft_strchr(set, s1[i]) != NULL)
+	{
+		i++;
+		if (s1[i] == '\0')
+			return (ft_strdup(""));
+	}
 	l = ltrim_nr(s1, set);
 	r = rtrim_nr(s1, set);
 	lenres = ft_strlen(s1) - l - r;
